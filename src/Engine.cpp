@@ -8,8 +8,8 @@ namespace Rogue{
 	
 	void Engine::run(){
 		while(true){
-			graphics.render();
 			graphics.player();
+			graphics.render();
 			player.move();
 		}
 	}

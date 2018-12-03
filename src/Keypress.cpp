@@ -9,9 +9,7 @@ namespace Rogue{
 				std::cin.clear();
 				std::cin.ignore(1000,'\n');
 			}
-			else{
 				return m_key;
-			}
 		}
 	}
 }
