@@ -1,0 +1,1 @@
+writing all in the same file and separating. Goal is to finish the basic components.

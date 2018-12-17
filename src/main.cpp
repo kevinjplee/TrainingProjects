@@ -2,7 +2,7 @@
 #include <array>
 #include <vector>
 
-#define MAPSIZE 10
+#define MAPSIZE 9 // real size -1
 
 class Tile{
 	private:
