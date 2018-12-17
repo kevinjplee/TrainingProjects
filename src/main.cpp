@@ -2,6 +2,8 @@
 #include <array>
 #include <vector>
 
+#define MAPSIZE 10
+
 class Tile{
 	private:
 	  char m_symbol;
@@ -66,23 +68,31 @@ class Player{
 		  g_map[m_y][m_x].set(' ');
 		  switch(key){
 			case('w'):
-				  if(g_map[m_y-1][m_x].p_symbol == ' '){
-					  m_y--;
+				  if(m_y != 0){
+				  	if(g_map[m_y-1][m_x].p_symbol == ' '){
+						  m_y--;
+				  	}
 				  }
 				  break;
 			case('s'):
-				  if(g_map[m_y+1][m_x].p_symbol == ' '){
-					  m_y++;
+				  if(m_y != MAPSIZE){
+					  if(g_map[m_y+1][m_x].p_symbol == ' '){
+					  	m_y++;
+				  	}
 				  }
 				  break;
 			case('a'):
-				  if(g_map[m_y][m_x-1].p_symbol == ' '){
-					  m_x--;
+				  if(m_x != 0){
+				  	if(g_map[m_y][m_x-1].p_symbol == ' '){
+						  m_x--;
+				  	}
 				  }
 				  break;
 			case('d'):
-				  if(g_map[m_y][m_x+1].p_symbol == ' '){
-					  m_x++;
+				  if(m_x != MAPSIZE){
+				  	if(g_map[m_y][m_x+1].p_symbol == ' '){
+						  m_x++;
+				  	}
 				  }
 				  break;
 		  }
