@@ -1,1 +1,6 @@
 writing all in the same file and separating. Goal is to finish the basic components.
+
+using and typedef
+
+https://www.youtube.com/watch?v=QQzAHcojEKg&index=1&list=PLhfAbcv9cehhkG7ZQK0nfIGJC_C-wSLrx
+sdl2 & c++ tutorial

@@ -2,7 +2,7 @@
 #include <array>
 #include <vector>
 
-#define MAPSIZE 9 // real size -1
+#define MAPSIZE 10 // real size -1
 
 class Tile{
 	private:
@@ -23,9 +23,10 @@ class Tile{
 	  }
 };
 
-std::array<std::array<Tile,10>,10> g_map;
+std::array<std::array<Tile,MAPSIZE>,MAPSIZE> g_map;
 
 void printmap(){
+	std::cout << "\033[2J\033[1;1H";
 	for(int column = 0; column < 10; column++){
 		for(int row = 0; row < 10; row++){
 			g_map[column][row].print();
@@ -69,28 +70,28 @@ class Player{
 		  switch(key){
 			case('w'):
 				  if(m_y != 0){
-				  	if(g_map[m_y-1][m_x].p_symbol == ' '){
+				  	if(g_map[m_y - 1][m_x].p_symbol == ' '){
 						  m_y--;
 				  	}
 				  }
 				  break;
 			case('s'):
-				  if(m_y != MAPSIZE){
-					  if(g_map[m_y+1][m_x].p_symbol == ' '){
+				  if(m_y != MAPSIZE - 1){
+					  if(g_map[m_y + 1][m_x].p_symbol == ' '){
 					  	m_y++;
 				  	}
 				  }
 				  break;
 			case('a'):
 				  if(m_x != 0){
-				  	if(g_map[m_y][m_x-1].p_symbol == ' '){
+				  	if(g_map[m_y][m_x - 1].p_symbol == ' '){
 						  m_x--;
 				  	}
 				  }
 				  break;
 			case('d'):
-				  if(m_x != MAPSIZE){
-				  	if(g_map[m_y][m_x+1].p_symbol == ' '){
+				  if(m_x != MAPSIZE - 1){
+				  	if(g_map[m_y][m_x + 1].p_symbol == ' '){
 						  m_x++;
 				  	}
 				  }

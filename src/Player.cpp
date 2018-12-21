@@ -2,11 +2,9 @@
 #include <iostream>
 #include <vector>
 
-#define MAPSIZE 9
-
 namespace Tower{
-	Player::Player():m_x(5),m_y(5),m_symbol('@'){
-		
+	Player::Player(Map* map):m_x(5),m_y(5),m_symbol('@'), m_map(map){
+			
 		}
 	
 	char Player::keycheck(){
@@ -29,37 +27,37 @@ namespace Tower{
 	void Player::move(){
 		  char key;
 		  key = keycheck();
-		  g_map[m_y][m_x].set(' ');
+		  m_map -> setmap(m_x,m_y,' ');
 		  switch(key){
 			case('w'):
 				  if(m_y != 0){
-				  	if(g_map[m_y-1][m_x].p_symbol == ' '){
+				  	if(m_map -> p_map[m_y-1][m_x].p_symbol == ' '){
 						  m_y--;
 				  	}
 				  }
 				  break;
 			case('s'):
 				  if(m_y != MAPSIZE){
-					  if(g_map[m_y+1][m_x].p_symbol == ' '){
+					  if(m_map -> p_map[m_y+1][m_x].p_symbol == ' '){
 					  	m_y++;
 				  	}
 				  }
 				  break;
 			case('a'):
 				  if(m_x != 0){
-				  	if(g_map[m_y][m_x-1].p_symbol == ' '){
+				  	if(m_map -> p_map[m_y][m_x-1].p_symbol == ' '){
 						  m_x--;
 				  	}
 				  }
 				  break;
 			case('d'):
 				  if(m_x != MAPSIZE){
-				  	if(g_map[m_y][m_x+1].p_symbol == ' '){
+				  	if(m_map -> p_map[m_y][m_x+1].p_symbol == ' '){
 						  m_x++;
 				  	}
 				  }
 				  break;
 		  }
-		  g_map[m_y][m_x].set(m_symbol);
+		  m_map -> setmap(m_x,m_y,m_symbol);
 	  }
 }
